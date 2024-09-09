@@ -11,14 +11,14 @@ if(isset($_POST['save'])){
 
     $result = mysqli_query($conn,  $sql) or die("Query failed.");
 
-    if(mysqli_num_rows($result) > 0){
-        echo "<p style='color:red;text-aline:center;margin:10px 0'>Category Name already exists.</p>";
-    }else{
-        $sql1 = "INSERT INTO  category (category_name, post) VALUES ('{$cat_name}', '{$cat_prod}')";
-        if(mysqli_query($conn, $sql1)){
-            header("Location: {$hostname}/admin/category.php");
-        }
-    }
+    // if(mysqli_num_rows($result) > 0){
+    //     echo "<p style='color:red;text-aline:center;margin:10px 0'>Category Name already exists.</p>";
+    // }else{
+    //     $sql1 = "INSERT INTO  category (category_name, post) VALUES ('{$cat_name}', '{$cat_prod}')";
+    //     if(mysqli_query($conn, $sql1)){
+    //         header("Location: {$hostname}/admin/category.php");
+    //     }
+    // }
 
 }
 
