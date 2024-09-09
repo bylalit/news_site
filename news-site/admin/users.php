@@ -34,7 +34,7 @@ if($_SESSION['user_role'] == "0"){
 
 
                   <table class="content-table">
-                      <thead>
+                      <!-- <thead>
                           <th>S.No.</th>
                           <th>Full Name</th>
                           <th>User Name</th>
@@ -42,7 +42,7 @@ if($_SESSION['user_role'] == "0"){
                           <th>Edit</th>
                           <th>Delete</th>
                       </thead>
-                      <tbody>
+                      <tbody> -->
                         <?php
                             while($row = mysqli_fetch_assoc($result)){
                         ?>
