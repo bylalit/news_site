@@ -10,7 +10,7 @@
             include "config.php";
 
             $post_id =  $_GET['id'];
-            $sql = "SELECT post.post_id, post.title, post.description, post.post_date, category.category_name, user.username FROM post
+            $sql = "SELECT post.post_id, post.title, post.description, category.category_name FROM post
             LEFT JOIN category ON post.category = category.category_id
             LEFT JOIN user ON post.author = user.user_id
             WHERE post.post_id = '{$post_id}'";
@@ -18,13 +18,13 @@
             $result = mysqli_query($conn, $sql) or die("Query Unsuccessful.");
             if(mysqli_num_rows(($result)) > 0){
                 while($row = mysqli_fetch_assoc($result)){
-                    
+
 
         ?>
         <!-- Form for show edit-->
         <form action="" method="POST" enctype="multipart/form-data" autocomplete="off">
             <div class="form-group">
-                <input type="hidden" name="post_id"  class="form-control" value="1" placeholder="">
+                <input type="hidden" name="post_id"  class="form-control" value="<?php echo $row['post_id'] ?>" placeholder="">
             </div>
             <div class="form-group">
                 <label for="exampleInputTile">Title</label>
@@ -54,6 +54,12 @@
             <input type="submit" name="submit" class="btn btn-primary" value="Update" />
         </form>
         <!-- Form End -->
+         <?php 
+         }
+         } else {
+            echo "No post found";
+            }
+        ?>
       </div>
     </div>
   </div>
