@@ -19,7 +19,6 @@
             if(mysqli_num_rows(($result)) > 0){
                 while($row = mysqli_fetch_assoc($result)){
 
-
         ?>
         <!-- Form for show edit-->
         <form action="" method="POST" enctype="multipart/form-data" autocomplete="off">
