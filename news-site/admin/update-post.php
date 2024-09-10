@@ -6,6 +6,21 @@
         <h1 class="admin-heading">Update Post</h1>
     </div>
     <div class="col-md-offset-3 col-md-6">
+        <?php
+            include "config.php";
+
+            $post_id =  $_GET['id'];
+            $sql = "SELECT post.post_id, post.title, post.description, post.post_date, category.category_name, user.username FROM post
+            LEFT JOIN category ON post.category = category.category_id
+            LEFT JOIN user ON post.author = user.user_id
+            WHERE post.post_id = '{$post_id}'";
+
+            $result = mysqli_query($conn, $sql) or die("Query Unsuccessful.");
+            if(mysqli_num_rows(($result)) > 0){
+                while($row = mysqli_fetch_assoc($result)){
+                    
+
+        ?>
         <!-- Form for show edit-->
         <form action="" method="POST" enctype="multipart/form-data" autocomplete="off">
             <div class="form-group">
