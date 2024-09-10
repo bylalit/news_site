@@ -20,10 +20,20 @@
                     }
                     $offset = ($page - 1) * $limit;
 
-                    $sql = "SELECT * FROM post
-                    LEFT JOIN category ON post.category = category.category_id
-                    LEFT JOIN user ON post.author = user.user_id
-                    ORDER BY post.post_id DESC LIMIT {$offset}, {$limit}";
+                    if($_SESSION['user_role'] == "1"){
+                        $sql = "SELECT post.post_id, post.title, post.description, post.post_date, category.category_name, user.username FROM post
+                        LEFT JOIN category ON post.category = category.category_id
+                        LEFT JOIN user ON post.author = user.user_id
+                        ORDER BY post.post_id DESC LIMIT {$offset}, {$limit}";
+                    }elseif($_SESSION['user_role'] == "0"){
+                        $sql = "SELECT post.post_id, post.title, post.description, post.post_date, category.category_name, user.username FROM post
+                        LEFT JOIN category ON post.category = category.category_id
+                        LEFT JOIN user ON post.author = user.user_id
+                        WHERE post.author = {$_SESSION['user_id']}
+                        ORDER BY post.post_id DESC LIMIT {$offset}, {$limit}";   
+                    }
+
+                    
 
                     $result = mysqli_query($conn, $sql) or die("Query Unsuccessful.");
 
@@ -49,8 +59,8 @@
                               <td><?php echo $row['category_name'] ?></td>
                               <td><?php echo $row['post_date'] ?></td>
                               <td><?php echo $row['username'] ?></td>
-                              <td class='edit'><a href='update-post.php?id=<?php echo $row['user_id'] ?>'><i class='fa fa-edit'></i></a></td>
-                              <td class='delete'><a href='delete-post.php?id=<?php echo $row['user_id'] ?>'><i class='fa fa-trash-o'></i></a></td>
+                              <td class='edit'><a href='update-post.php?id=<?php echo $row['post_id']; ?>'><i class='fa fa-edit'></i></a></td>
+                              <td class='delete'><a href='delete-post.php?id=<?php echo $row['post_id']; ?>'><i class='fa fa-trash-o'></i></a></td>
                           </tr>
                           <?php } ?>
                       </tbody>
@@ -60,7 +70,7 @@
                   <?php
                         }
 
-                        $sql1 = "SELECT * FROM user";
+                        $sql1 = "SELECT * FROM post";
                         $result1 = mysqli_query($conn, $sql1) or die("Query Failed");
 
                         if(mysqli_num_rows($result1) > 0){
@@ -75,7 +85,7 @@
                             }
                             
                             for($i = 1; $i <=  $total_page; $i++){
-                                if($i  == $page){
+                                if($i == $page){
                                     $active =  "active";  
                                 }else{
                                     $active  = "";
@@ -88,6 +98,8 @@
                             }
                             
                             echo '</ul>';
+                        }else{
+                            echo "<div>No posts found</div>";
                         }
                       ?>
 

@@ -94,6 +94,8 @@ if($_SESSION['user_role'] == "0"){
                             }
                             
                             echo '</ul>';
+                        }else{
+                            echo  "<div>No posts found</div>";
                         }
                       ?>
                   
