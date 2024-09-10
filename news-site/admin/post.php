@@ -91,12 +91,6 @@
                         }
                       ?>
 
-
-                  <!-- <ul class='pagination admin-pagination'>
-                      <li class="active"><a>1</a></li>
-                      <li><a>2</a></li>
-                      <li><a>3</a></li>
-                  </ul> -->
               </div>
           </div>
       </div>
