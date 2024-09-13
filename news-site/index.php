@@ -87,7 +87,7 @@
                                 }else{
                                     $active  = "";
                                 }
-                                echo '<li class="'.$active.'"><a href="index.php?page='.$i.'">'.$i.'</a></li>';
+                                // echo '<li class="'.$active.'"><a href="index.php?page='.$i.'">'.$i.'</a></li>';
                             
                             }
                             if($total_page > $page){
