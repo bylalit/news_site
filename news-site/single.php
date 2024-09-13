@@ -47,7 +47,7 @@
                         <?php
                                 }
                             }else{
-                                // echo "<h2>No posts found.</h2>";
+                                echo "<h2>No posts found.</h2>";
                             }
                         ?>
                     </div>
