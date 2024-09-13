@@ -23,7 +23,7 @@
                         ?>
 
 
-                        <!-- <div class="post-content single-post">
+                        <div class="post-content single-post">
                             <h3><?php echo $row["title"]; ?></h3>
                             <div class="post-information">
                                 <span>
@@ -43,7 +43,7 @@
                             <p class="description">
                             <?php echo $row["description"]; ?>
                             </p>
-                        </div> -->
+                        </div>
                         <?php
                                 }
                             }else{
