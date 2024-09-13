@@ -25,7 +25,7 @@
 
                         <div class="post-content single-post">
                             <h3><?php echo $row["title"]; ?></h3>
-                            <div class="post-information">
+                            <!-- <div class="post-information">
                                 <span>
                                     <i class="fa fa-tags" aria-hidden="true"></i>
                                     <?php echo $row["category_name"]; ?>
@@ -38,7 +38,7 @@
                                     <i class="fa fa-calendar" aria-hidden="true"></i>
                                     <?php echo $row["post_date"]; ?>
                                 </span>
-                            </div>
+                            </div> -->
                             <img class="single-feature-image" src="admin/upload/<?php echo $row["post_img"]; ?>" alt=""/>
                             <p class="description">
                             <?php echo $row["description"]; ?>
