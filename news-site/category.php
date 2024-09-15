@@ -44,7 +44,7 @@
                                 <div class="col-md-4">
                                     <a class="post-img" href="single.php?id=<?php echo $row["post_id"]; ?>"><img src="admin/upload/<?php echo $row["post_img"]; ?>" alt=""/></a>
                                 </div>
-                                <!-- <div class="col-md-8">
+                                <div class="col-md-8">
                                     <div class="inner-content clearfix">
                                         <h3><a href='single.php?id=<?php echo $row["post_id"]; ?>'><?php echo $row["title"]; ?></a></h3>
                                         <div class="post-information">
@@ -66,7 +66,7 @@
                                         </p>
                                         <a class='read-more pull-right' href='single.php?id=<?php echo $row["post_id"]; ?>'>read more</a>
                                     </div>
-                                </div> -->
+                                </div>
                             </div>
                         </div>
                         <?php
