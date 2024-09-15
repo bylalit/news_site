@@ -90,15 +90,15 @@
                                 echo  '<li><a href="index.php?cid='.$cat_id.'&page='.($page - 1).'">Prev</a></li>';
                             }
                             
-                            // for($i = 1; $i <=  $total_page; $i++){
-                            //     if($i == $page){
-                            //         $active =  "active";  
-                            //     }else{
-                            //         $active  = "";
-                            //     }
-                            //     echo '<li class="'.$active.'"><a href="index.php?cid='.$cat_id.'&page='.$i.'">'.$i.'</a></li>';
+                            for($i = 1; $i <=  $total_page; $i++){
+                                if($i == $page){
+                                    $active =  "active";  
+                                }else{
+                                    $active  = "";
+                                }
+                                echo '<li class="'.$active.'"><a href="index.php?cid='.$cat_id.'&page='.$i.'">'.$i.'</a></li>';
                             
-                            // }
+                            }
                             if($total_page > $page){
                                 echo '<li><a href="index.php?cid='.$cat_id.'&page='.($page + 1).'">Next</a></li>';
                             }
