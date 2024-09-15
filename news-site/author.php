@@ -97,11 +97,11 @@
                                 }else{
                                     $active  = "";
                                 }
-                                echo '<li class="'.$active.'"><a href="index.php?cid='.$auth_id.'&page='.$i.'">'.$i.'</a></li>';
+                                echo '<li class="'.$active.'"><a href="index.php?aid='.$auth_id.'&page='.$i.'">'.$i.'</a></li>';
                             
                             }
                             if($total_page > $page){
-                                echo '<li><a href="index.php?cid='.$auth_id.'&page='.($page + 1).'">Next</a></li>';
+                                echo '<li><a href="index.php?aid='.$auth_id.'&page='.($page + 1).'">Next</a></li>';
                             }
                             
                             echo '</ul>';
