@@ -80,32 +80,32 @@
 
                     <?php
 
-                        // if(mysqli_num_rows($result1) > 0){
-                        //     $total_records = mysqli_num_rows($result1);
+                        if(mysqli_num_rows($result1) > 0){
+                            $total_records = mysqli_num_rows($result1);
                             
-                        //     $total_page = ceil($total_records / $limit);
+                            $total_page = ceil($total_records / $limit);
 
 
-                        //     echo "<ul class='pagination admin-pagination'>";
-                        //     if($page > 1){
-                        //         echo  '<li><a href="index.php?aid='.$auth_id.'&page='.($page - 1).'">Prev</a></li>';
-                        //     }
+                            echo "<ul class='pagination admin-pagination'>";
+                            if($page > 1){
+                                echo  '<li><a href="index.php?aid='.$auth_id.'&page='.($page - 1).'">Prev</a></li>';
+                            }
                             
-                        //     for($i = 1; $i <=  $total_page; $i++){
-                        //         if($i == $page){
-                        //             $active =  "active";  
-                        //         }else{
-                        //             $active  = "";
-                        //         }
-                        //         echo '<li class="'.$active.'"><a href="index.php?cid='.$auth_id.'&page='.$i.'">'.$i.'</a></li>';
+                            for($i = 1; $i <=  $total_page; $i++){
+                                if($i == $page){
+                                    $active =  "active";  
+                                }else{
+                                    $active  = "";
+                                }
+                                echo '<li class="'.$active.'"><a href="index.php?cid='.$auth_id.'&page='.$i.'">'.$i.'</a></li>';
                             
-                        //     }
-                        //     if($total_page > $page){
-                        //         echo '<li><a href="index.php?cid='.$auth_id.'&page='.($page + 1).'">Next</a></li>';
-                        //     }
+                            }
+                            if($total_page > $page){
+                                echo '<li><a href="index.php?cid='.$auth_id.'&page='.($page + 1).'">Next</a></li>';
+                            }
                             
-                        //     echo '</ul>';
-                        // }
+                            echo '</ul>';
+                        }
                     ?>
                 </div>
                 <!-- /post-container -->
