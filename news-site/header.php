@@ -21,7 +21,7 @@
                 $sql_title = "SELECT * FROM category WHERE category_id = {$_GET['cid']}";
                 $result_title = mysqli_query($conn, $sql_title) or die("Title  query failed");
                 $row_title = mysqli_fetch_assoc($result_title);
-                $page_title = $row_title['category_name'];
+                $page_title = $row_title['category_name'] . " News";
             }else{
                 $page_title = "No post  found";
             }
@@ -31,16 +31,20 @@
                 $sql_title = "SELECT * FROM user WHERE user_id = {$_GET['aid']}";
                 $result_title = mysqli_query($conn, $sql_title) or die("Title  query failed");
                 $row_title = mysqli_fetch_assoc($result_title);
-                $page_title = $row_title['first_name'] . " " . $row_title['last_name'];
+                $page_title = "News By " . $row_title['first_name'] . " " . $row_title['last_name'];
             }else{
                 $page_title = "No post  found";
             }
             break;
         case "search.php":
-            echo  "Search page";
+            if(isset($_GET['search'])){
+                $page_title = $_GET['search'];
+            }else{
+                $page_title = "No search result found";
+            }
             break;
         default:
-            echo "News site";
+            $page_title = "News site";
             break;
     }
 ?>
