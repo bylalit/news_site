@@ -27,7 +27,14 @@
             }
             break;
         case "author.php":
-            echo "Author page";
+            if(isset($_GET['cid'])){
+                $sql_title = "SELECT * FROM category WHERE category_id = {$_GET['cid']}";
+                $result_title = mysqli_query($conn, $sql_title) or die("Title  query failed");
+                $row_title = mysqli_fetch_assoc($result_title);
+                $page_title = $row_title['category_name'];
+            }else{
+                $page_title = "No post  found";
+            }
             break;
         case "search.php":
             echo  "Search page";
