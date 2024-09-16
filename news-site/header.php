@@ -2,8 +2,26 @@
     // echo "<pre>";
     // print_r($_SERVER);
     // echo "</pre>";
+    $page = $_SERVER['PHP_SELF'];
+    // echo '<h1>' . basename($_SERVER['PHP_SELF']) . '</h1>';
 
-    echo '<h1>' . $_SERVER['PHP_SELF'] . '</h1>';
+    switch($page){
+        case "single.php":
+            echo "Single page";
+            break;
+        case "category.php":
+            echo "Category page";
+            break;
+        case "author.php":
+            echo "Author page";
+            break;
+        case "search.php":
+            echo  "Search page";
+            break;
+        default:
+            echo "News site";
+            break;
+    }
 ?>
 
 <!DOCTYPE html>
