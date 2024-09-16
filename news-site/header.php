@@ -27,11 +27,11 @@
             }
             break;
         case "author.php":
-            if(isset($_GET['cid'])){
-                $sql_title = "SELECT * FROM category WHERE category_id = {$_GET['cid']}";
+            if(isset($_GET['aid'])){
+                $sql_title = "SELECT * FROM user WHERE user_id = {$_GET['aid']}";
                 $result_title = mysqli_query($conn, $sql_title) or die("Title  query failed");
                 $row_title = mysqli_fetch_assoc($result_title);
-                $page_title = $row_title['category_name'];
+                $page_title = $row_title['first_name'] . " " . $row_title['last_name'];
             }else{
                 $page_title = "No post  found";
             }
