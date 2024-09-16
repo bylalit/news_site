@@ -1,3 +1,11 @@
+<?php
+    // echo "<pre>";
+    // print_r($_SERVER);
+    // echo "</pre>";
+
+    echo '<h1>' . $_SERVER['PHP_SELF'] . '</h1>';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
