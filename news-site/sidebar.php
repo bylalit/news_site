@@ -20,9 +20,9 @@
 
             $limit = 3;
     
-            // $sql = "SELECT post.post_id, post.title, post.post_date, category.category_name,post.post_img FROM post
-            // LEFT JOIN category ON post.category = category.category_id
-            //ORDER BY post.post_id DESC LIMIT {$limit}";
+            $sql = "SELECT post.post_id, post.title, post.post_date, category.category_name,post.post_img FROM post
+            LEFT JOIN category ON post.category = category.category_id
+            ORDER BY post.post_id DESC LIMIT {$limit}";
 
             $result = mysqli_query($conn, $sql) or die("Query Unsuccessful. : Recent Post");
 
