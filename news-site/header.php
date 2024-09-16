@@ -36,13 +36,13 @@
                 $page_title = "No post  found";
             }
             break;
-        // case "search.php":
-        //     if(isset($_GET['search'])){
-        //         $page_title = $_GET['search'];
-        //     }else{
-        //         $page_title = "No search result found";
-        //     }
-        //     break;
+        case "search.php":
+            if(isset($_GET['search'])){
+                $page_title = $_GET['search'];
+            }else{
+                $page_title = "No search result found";
+            }
+            break;
         default:
             $page_title = "News site";
             break;
