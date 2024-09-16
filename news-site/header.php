@@ -6,26 +6,26 @@
     include "config.php";
 
     switch($page){
-        case "single.php":
-            if(isset($_GET['id'])){
-                $sql_title = "SELECT * FROM post WHERE post_id = {$_GET['id']}";
-                $result_title = mysqli_query($conn, $sql_title) or die("Title  query failed");
-                $row_title = mysqli_fetch_assoc($result_title);
-                $page_title = $row_title['title'];
-            }else{
-                $page_title = "No post  found";
-            }
-            break;
-        case "category.php":
-            if(isset($_GET['cid'])){
-                $sql_title = "SELECT * FROM category WHERE category_id = {$_GET['cid']}";
-                $result_title = mysqli_query($conn, $sql_title) or die("Title  query failed");
-                $row_title = mysqli_fetch_assoc($result_title);
-                $page_title = $row_title['category_name'] . " News";
-            }else{
-                $page_title = "No post  found";
-            }
-            break;
+        // case "single.php":
+        //     if(isset($_GET['id'])){
+        //         $sql_title = "SELECT * FROM post WHERE post_id = {$_GET['id']}";
+        //         $result_title = mysqli_query($conn, $sql_title) or die("Title  query failed");
+        //         $row_title = mysqli_fetch_assoc($result_title);
+        //         $page_title = $row_title['title'];
+        //     }else{
+        //         $page_title = "No post  found";
+        //     }
+        //     break;
+        // case "category.php":
+        //     if(isset($_GET['cid'])){
+        //         $sql_title = "SELECT * FROM category WHERE category_id = {$_GET['cid']}";
+        //         $result_title = mysqli_query($conn, $sql_title) or die("Title  query failed");
+        //         $row_title = mysqli_fetch_assoc($result_title);
+        //         $page_title = $row_title['category_name'] . " News";
+        //     }else{
+        //         $page_title = "No post  found";
+        //     }
+        //     break;
         case "author.php":
             if(isset($_GET['aid'])){
                 $sql_title = "SELECT * FROM user WHERE user_id = {$_GET['aid']}";
