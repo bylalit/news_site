@@ -39,10 +39,10 @@
                     <i class="fa fa-tags" aria-hidden="true"></i>
                     <a href='category.php?cid=<?php echo $row["category"]; ?>'><?php echo $row["category_name"]; ?></a>
                 </span>
-                <!-- <span>
+                <span>
                     <i class="fa fa-calendar" aria-hidden="true"></i>
                     <?php echo $row["post_date"]; ?>
-                </span> -->
+                </span>
                 <a class="read-more" href='single.php?id=<?php echo $row["post_id"]; ?>'>read more</a>
             </div>
         </div>
