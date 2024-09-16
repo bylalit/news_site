@@ -1,4 +1,4 @@
-<div id="sidebar" class="col-md-4">
+<!-- <div id="sidebar" class="col-md-4">
     <!-- search box -->
     <div class="search-box-container">
         <h4>Search</h4>
@@ -52,4 +52,4 @@
         
     </div>
     <!-- /recent posts box -->
-</div>
+</div> -->
