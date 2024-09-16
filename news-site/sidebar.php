@@ -30,20 +30,20 @@
                 while($row = mysqli_fetch_assoc($result)){
         ?>
         <div class="recent-post">
-            <a class="post-img" href="">
-                <img src="images/post-format.jpg" alt=""/>
+            <a class="post-img" href="single.php?id=<?php echo $row["post_id"]; ?>">
+                <img src="admin/upload/<?php echo $row["post_img"]; ?>" alt=""/>
             </a>
             <div class="post-content">
-                <h5><a href="single.php">Lorem ipsum dolor sit amet</a></h5>
+                <h5><a href='single.php?id=<?php echo $row["post_id"]; ?>'><?php echo $row["title"]; ?></a></h5>
                 <span>
                     <i class="fa fa-tags" aria-hidden="true"></i>
-                    <a href='category.php'>Html</a>
+                    <a href='category.php?cid=<?php echo $row["category"]; ?>'><?php echo $row["category_name"]; ?></a>
                 </span>
                 <span>
                     <i class="fa fa-calendar" aria-hidden="true"></i>
-                    01 Nov, 2019
+                    <?php echo $row["post_date"]; ?>
                 </span>
-                <a class="read-more" href="single.php">read more</a>
+                <a class="read-more" href='single.php?id=<?php echo $row["post_id"]; ?>'>read more</a>
             </div>
         </div>
         <?php } 
